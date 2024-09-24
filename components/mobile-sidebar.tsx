@@ -3,11 +3,15 @@
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Sidebar from "./sidebar";
 
-const MobileSidebar = () => {
+interface MobileSidebarProps {
+  apiLimitCount: number;
+  isSubscribed: boolean;
+}
+
+const MobileSidebar = ({ apiLimitCount, isSubscribed }: MobileSidebarProps) => {
   // Hydration error fix
   const [isMounted, setIsMounted] = useState(false);
 
@@ -20,12 +24,12 @@ const MobileSidebar = () => {
   return (
     <Sheet>
       <SheetTrigger>
-        <Button variant="ghost" size="icon" className="md:hidden">
+        <div className="rounded-md p-2 hover:bg-accent hover:text-accent-foreground md:hidden">
           <Menu />
-        </Button>
+        </div>
       </SheetTrigger>
       <SheetContent side="left" className="p-0">
-        <Sidebar />
+        <Sidebar apiLimitCount={apiLimitCount} isSubscribed={isSubscribed} />
       </SheetContent>
     </Sheet>
   );
