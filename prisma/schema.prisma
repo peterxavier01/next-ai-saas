@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model UserApiLimit {
+  id           String         @id @default(cuid())
+  userId       String         @unique
+  count        Int            @default(0)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  subscription Subscription[]
+}
+
+model Plan {
+  id                 Int            @id @default(autoincrement())
+  productId          Int
+  productName        String?
+  variantId          Int            @unique
+  name               String
+  description        String?
+  price              String
+  isUsageBased       Boolean        @default(false)
+  interval           String?
+  intervalCount      Int?
+  trialInterval      String?
+  trialIntervalCount Int?
+  sort               Int?
+  subscription       Subscription[]
+}
+
+model WebhookEvent {
+  id              Int      @id @default(autoincrement())
+  createdAt       DateTime @default(now())
+  eventName       String
+  processed       Boolean  @default(false)
+  body            Json
+  processingError String?
+}
+
+model Subscription {
+  id                 Int           @id @default(autoincrement())
+  lemonSqueezyId     String        @unique
+  orderId            Int
+  name               String
+  email              String
+  status             String
+  statusFormatted    String
+  renewsAt           String?
+  endsAt             String?
+  trialEndsAt        String?
+  price              String
+  isUsageBased       Boolean       @default(false)
+  isPaused           Boolean       @default(false)
+  subscriptionItemId Int?
+  user               UserApiLimit? @relation(fields: [userId], references: [userId], onDelete: SetNull)
+  userId             String?
+  plan               Plan?         @relation(fields: [planId], references: [id], onDelete: SetNull)
+  planId             Int?
+}
