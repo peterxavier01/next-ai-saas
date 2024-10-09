@@ -79,7 +79,7 @@ const Sidebar = ({ apiLimitCount = 0, isSubscribed }: SidebarProps) => {
           <div className="relative mr-4 h-8 w-8">
             <Image fill src="/logo.png" alt="logo" />
           </div>
-          <h1 className={cn("text-2xl font-bold", montserrat)}>Genius</h1>
+          <h1 className={cn("text-2xl font-bold", montserrat)}>Brainy</h1>
         </Link>
 
         <div className="space-y-1">
