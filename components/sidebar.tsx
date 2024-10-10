@@ -77,7 +77,7 @@ const Sidebar = ({ apiLimitCount = 0, isSubscribed }: SidebarProps) => {
       <div className="flex-1 px-3 py-2">
         <Link href="/dashboard" className="mb-14 flex items-center pl-3">
           <div className="relative mr-4 h-8 w-8">
-            <Image fill src="/logo.png" alt="logo" />
+            <Image fill src="/logo.svg" alt="logo" />
           </div>
           <h1 className={cn("text-2xl font-bold", montserrat)}>Brainy</h1>
         </Link>
