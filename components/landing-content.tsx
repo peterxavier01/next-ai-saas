@@ -4,28 +4,28 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Jean",
+    name: "Sarah T",
+    avatar: "S",
+    title: "Data Scientist",
+    description: "This AI app has transformed the way I work. The accuracy and speed are unmatched! Highly recommend for anyone looking to boost productivity.",
+  },
+  {
+    name: "John M.",
     avatar: "J",
-    title: "Software Engineer",
-    description: "This AI application is the best I've used so far",
-  },
-  {
-    name: "Mike",
-    avatar: "M",
     title: "Developer Relations",
-    description: "This AI application is the best I've used so far",
+    description: "I was blown away by how intuitive and easy it is to use. It handles complex tasks effortlessly. A game-changer for professionals!",
   },
   {
-    name: "Ricky",
-    avatar: "R",
-    title: "Tech Enthusiast",
-    description: "This AI application is the best I've used so far",
+    name: "Dr. Emily S.",
+    avatar: "E",
+    title: "Researcher",
+    description: "This AI application is thef best I've used so far",
   },
   {
-    name: "Naomi",
-    avatar: "N",
+    name: "Alex P.",
+    avatar: "A",
     title: "Software Engineer",
-    description: "This AI application is the best I've used so far",
+    description: "The AI capabilities are top-notch. It saved me hours of manual work, and the results were flawless. Definitely worth using!",
   },
 ];
 
@@ -40,7 +40,7 @@ export const LandingContent = () => {
         {testimonials.map((item) => (
           <Card
             key={item.avatar}
-            className="border-none bg-[#192339] text-white"
+            className="border-none bg-[hsl(0,0%,10%)] text-white"
           >
             <CardHeader>
               <CardTitle className="flex items-center gap-x-2">
