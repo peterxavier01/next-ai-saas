@@ -6,7 +6,7 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   theme: {
     container: {
       center: true,
@@ -17,6 +17,9 @@ module.exports = {
     },
     extend: {
       colors: {
+        cyan: "#1976D2",
+        "vibrant-red": "#673AB7",
+        "bright-yellow": "#FF5722",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
